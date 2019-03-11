@@ -1,0 +1,25 @@
+.ant-btn-primary {
+    &:before {
+        display: none !important;
+    }
+}
+
+.ant-table-thead {
+    >tr {
+        >th {
+            font-weight: 600;
+        }
+    }
+}
+
+.ant-form {
+    &-item {
+        &-label {
+            line-height: 32px;
+        }
+
+        &-control {
+            line-height: 32px;
+        }
+    }
+}

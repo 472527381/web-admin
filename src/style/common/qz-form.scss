@@ -1,0 +1,82 @@
+.qz-form {
+    width: 85%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+
+    tr {
+        height: 32px;
+
+        &:last-of-type {
+            td {
+                padding-bottom: 0;
+            }
+        }
+
+        td {
+            padding-bottom: 16px;
+
+            & > div {
+                width: 100%;
+            }
+
+            &:nth-child(odd) {
+                @include pxAndLh(14);
+                text-align: right;
+                label:after{
+                        content: ":";
+                        margin: 0 8px 0 2px;
+                        position: relative;
+                        top: -0.5px;
+                }
+            }
+            &:nth-child(even) {
+                padding-right: 32px;
+            }
+        }
+    }
+
+
+    &_full {
+        width: 100%;
+    }
+
+    &_border {
+        tr {
+            td {
+                border-bottom: 1px dashed $border-color;
+                padding-bottom: 24px;
+                padding-top: 24px;
+            }
+
+            &:first-of-type {
+                td {
+                    padding-top: 0;
+                }
+            }
+
+            &:last-of-type {
+                td {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+// 纯静态文案均分表单
+.form-row {
+    &-title {
+        @include pxAndLh(16);
+        color: $text-color-black-85;
+    }
+
+    .ant-row {
+        padding-top: 16px;
+    }
+
+    &_border {
+        padding-bottom: 32px;
+        border-bottom: 1px solid $border-color;
+    }
+}
