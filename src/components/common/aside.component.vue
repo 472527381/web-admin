@@ -39,7 +39,7 @@ export default {
         AsideItem
     },
     computed: {
-        ...mapGetters(["aside_collapsed"]),
+        ...mapGetters(["aside_collapsed"])
     },
     watch: {
         $route() {
@@ -72,6 +72,8 @@ export default {
             this.routes = routes.filter(el => {
                 return !el.meta.hide;
             });
+
+            this.initDefalutKey();
         },
 
         // 初始化时设置侧边栏类目选中
@@ -79,8 +81,8 @@ export default {
             const name = this.$route.name;
             let matched = this.$route.matched;
 
-            for(let index = 0; index < matched.length - 1; index++) {
-                let el = matched[index]
+            for (let index = 0; index < matched.length - 1; index++) {
+                let el = matched[index];
                 if (!el.meta.unfold && !index) {
                     this.setDefaultKey(el, name);
                     break;
@@ -89,9 +91,7 @@ export default {
             }
         }
     },
-    created() {
-        // this.initDefalutKey();
-    },
+    created() {},
     mounted() {
         this.setRoute();
     }
