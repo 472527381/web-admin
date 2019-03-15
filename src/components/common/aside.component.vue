@@ -72,6 +72,8 @@ export default {
             this.routes = routes.filter(el => {
                 return !el.meta.hide;
             });
+
+            this.initDefalutKey();
         },
 
         // 初始化时设置侧边栏类目选中
@@ -90,7 +92,6 @@ export default {
         }
     },
     created() {
-        // this.initDefalutKey();
     },
     mounted() {
         this.setRoute();

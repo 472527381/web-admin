@@ -11,6 +11,7 @@ export default [{
     meta: {
         name: '电站管理',
         auth: true,
+        unfold: true,
         icon: 'icon-alarm'
     },
     redirect: {
