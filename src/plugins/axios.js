@@ -1,8 +1,10 @@
 "use strict";
 
 import Vue from 'vue';
-import axios from "axios";
-import router from "../router";
+// import axios from "axios";
+import { axios as _axios } from '@/api';
+
+
 import UserInfoTool from './user-info-tool';
 import {
     message as Message
@@ -12,19 +14,6 @@ import {
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-const _domain = process.env.VUE_APP_API_URL;
-
-
-let config = {
-    baseURL: _domain,
-    timeout: 60 * 1000, // Timeout
-    withCredentials: true, // Check cross-site Access-Control
-    validateStatus: function (status) {
-        return status >= 200 && status < 500; // default
-    },
-};
-
-const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
     function (config) {
@@ -76,6 +65,4 @@ _axios.interceptors.response.use(
 
 
 Vue.prototype.$axios = _axios;
-Vue.prototype.$baseUrl = config.baseURL;
 export default _axios;
-export const domain = _domain;
