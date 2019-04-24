@@ -32,18 +32,37 @@
 
     import AsideItem from "./aside-item.component";
 
-    export default {
-        name: "aside-component",
-        data() {
-            return {
-                routes: [],
-                selectedKeys: [],
-                openKeys: []
-            };
+export default {
+    name: "aside-component",
+    data() {
+        return {
+            routes: [],
+            selectedKeys: [],
+            openKeys: []
+        };
+    },
+    components: {
+        AsideItem
+    },
+    computed: {
+        ...mapGetters(["aside_collapsed"])
+    },
+    watch: {
+        $route() {
+            this.setRoute();
+        }
+    },
+
+    methods: {
+        menu(item) {
+            this.$router.push({
+                name: item.key
+            });
         },
         components: {
             AsideItem
         },
+<<<<<<< HEAD
         computed: {
             ...mapGetters(["aside_collapsed"]),
         },
@@ -51,6 +70,19 @@
             $route() {
                 this.setRoute();
             }
+=======
+
+        // 设置路由
+        setRoute() {
+            const routes = this.$router.options.routes.filter(el => {
+                return el.children && !el.meta.hide;
+            });
+            this.routes = routes.filter(el => {
+                return !el.meta.hide;
+            });
+
+            this.initDefalutKey();
+>>>>>>> 25e7b1f4aee5cc2c2cee1bc4b7bc6fc19353d835
         },
 
         methods: {
@@ -60,6 +92,7 @@
                 });
             },
 
+<<<<<<< HEAD
             /**
              * 设置默认选中和展开的key
              * @param route 路由
@@ -92,6 +125,11 @@
                         this.setDefaultKey(el, name);
                         break;
                     }
+=======
+            for (let index = 0; index < matched.length - 1; index++) {
+                let el = matched[index];
+                if (!el.meta.unfold && !index) {
+>>>>>>> 25e7b1f4aee5cc2c2cee1bc4b7bc6fc19353d835
                     this.setDefaultKey(el, name);
                 }
             }
@@ -101,7 +139,16 @@
         mounted() {
             this.setRoute();
         }
+<<<<<<< HEAD
     };
+=======
+    },
+    created() {},
+    mounted() {
+        this.setRoute();
+    }
+};
+>>>>>>> 25e7b1f4aee5cc2c2cee1bc4b7bc6fc19353d835
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
