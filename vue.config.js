@@ -1,3 +1,10 @@
+/*
+ * @Author: 周杰
+ * @Date: 2020-03-17 10:11:19
+ * @LastEditors: 周杰
+ * @LastEditTime: 2020-03-17 10:26:40
+ * @Description: file content
+ */
 module.exports = {
     css: {
         loaderOptions: {
@@ -8,7 +15,7 @@ module.exports = {
             less: {
                 modifyVars: {
                     /* less 变量覆盖，用于自定义 ant design 主题 */
-                    'primary-color': '#ff6d33', // 全局主色
+                    'primary-color': '#1890FF', // 全局主色
                     'link-color': '#1890FF', // 链接色
                     '@success-color': '#52C41A', // 成功色
                     '@warning-color': '#FAAD14', // 警告色
