@@ -19,7 +19,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-service": "^3.5.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-sass": "^4.9.0",
